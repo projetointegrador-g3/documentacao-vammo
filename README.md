@@ -1,36 +1,43 @@
-1. Descrição
+<br />
 
-O projeto Vammo é o desenvolvimento de um backend robusto e escalável para um aplicativo de carona compartilhada. Utilizando TypeScript e o framework NestJS, o sistema visa proporcionar uma experiência eficiente e segura para a administração do catálogo de viagens, usuários e veículos, com foco em facilidade de uso e controle de informações.
-
-* Funcionalidades do projeto
-
-
-I. Gerenciamento de Viagens:
-
-Permite adicionar novas viagens ao sistema com as seguintes informações:
-- ID
-- Origem
-- Destino
-- Data e hora da ida
-- Preço
-- Distancia entre origem e destino
-- Veículo
-- Status da viagem
-- Nota
+<div align="center">
+    <img src="https://i.imgur.com/pxKDdcY.png" title="source: imgur.com" width="50%"/>
+</div>
 
 
-Consulta de Viagem:
-- Listagem de todas as viagens.
-- Busca por ID.
-- Visualização de cálculo do tempo da viagem com base na distância e na velocidade média do veículo.
 
+<br /><br />
 
-Atualização de Viagem:
-- Altera a origem, destino, data da ida, preço, distância, veículo, status e nota de uma viagem existente.
+## 1. Descrição
 
+O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para um aplicativo de carona compartilhada. Utilizando TypeScript e o framework NestJS, o sistema visa proporcionar uma experiência eficiente e segura para a administração do catálogo de viagens, usuários e veículos, com foco em facilidade de uso e controle de informações.
 
-II. Gerenciamento de Veículos:
+## 2. Funcionalidades do projeto
+<br>
+  2.1 Gerenciamento de Viagens:
+  <br>
+  Permite adicionar novas viagens ao sistema com as seguintes informações:
+  - ID
+  - Origem
+  - Destino
+  - Data e hora da ida
+  - Preço
+  - Distancia entre origem e destino
+  - Veículo
+  - Status da viagem
+  - Nota
+<br>
+  Consulta de Viagem:
+  - Listagem de todas as viagens.
+  - Busca por ID.
+  - Visualização de cálculo do tempo da viagem com base na distância e na velocidade média do veículo.
+  <br>
+  Atualização de Viagem:
+  - Altera a origem, destino, data da ida, preço, distância, veículo, status e nota de uma viagem existente.
+  <br><br>
 
+  2.2 Gerenciamento de Veículos:
+<br>
 Permite adicionar novos produtos ao sistema com as seguintes informações:
 - ID
 - Modelo
@@ -38,49 +45,47 @@ Permite adicionar novos produtos ao sistema com as seguintes informações:
 - Data de fabricação
 - Observação
 - Disponibilidade
-
-
+<br>
 Consulta de Veículos:
 - Busca avançada por modelo, placa e data de fabricação, observação e disponibilidade.
 - Visualização detalhada do perfil de um veículo.
-
-
+<br>
 Atualização de Dados:
 - Alterar modelo, placa, data de fabricação, observação e disponibilidade.
+<br><br>
 
-
-III. Gerenciamento de Usuários:
-
-
-Permite adicionar novos usuários ao sistema com as seguintes informações:
-- ID
-- Tipo de usuário
-- Genero
-- Nome
-- Data de Nascimento
-- Usuário
-- Senha
-- Foto
-- Avaliação
+2.3 Gerenciamento de Usuários:
+  Permite adicionar novos usuários ao sistema com as seguintes informações:
+  - ID
+  - Tipo de usuário
+  - Genero
+  - Nome
+  - Data de Nascimento
+  - Usuário
+  - Senha
+  - Foto
+  - Avaliação
+  <br>
+  Consulta de Usuários:
+  - Busca avançada por nome e usuário.
+  - Visualização detalhada do perfil de um usuário.
+  <br>
+  Atualização de Dados:
+  - Alterar informações cadastrais, como nome, usuário ou foto.
 
   
-Consulta de Usuários:
-- Busca avançada por nome e usuário.
-- Visualização detalhada do perfil de um usuário.
+------
 
+<br>
 
-Atualização de Dados:
-- Alterar informações cadastrais, como nome, usuário ou foto.
+## 2. Sobre esta API
 
-
-2. Sobre esta API
-
-Nest (NestJS) é uma estrutura para a construção de aplicativos Node.js do lado do servidor eficientes e escalonáveis. Ele usa JavaScript progressivo, é construído e oferece suporte total a TypeScript (mas ainda permite que os desenvolvedores codifiquem em JavaScript puro) e combina elementos de OOP (Programação Orientada a Objetos), FP (Programação Funcional) e FRP (Programação Funcional Reativa). Nos bastidores, o Nest faz uso de estruturas robustas de servidor HTTP como o Express (o padrão) e, opcionalmente, pode ser configurado para usar o Fastify também!
+<strong>Nest (NestJS)</strong> é uma estrutura para a construção de aplicativos Node.js do lado do servidor eficientes e escalonáveis. Ele usa JavaScript progressivo, é construído e oferece suporte total a TypeScript (mas ainda permite que os desenvolvedores codifiquem em JavaScript puro) e combina elementos de OOP (Programação Orientada a Objetos), FP (Programação Funcional) e FRP (Programação Funcional Reativa).
+Nos bastidores, o Nest faz uso de estruturas robustas de servidor HTTP como o Express (o padrão) e, opcionalmente, pode ser configurado para usar o Fastify também!
 
 O Nest fornece um nível de abstração acima desses Node.js comuns frameworks (Express/Fastify), mas também expõe suas APIs diretamente ao desenvolvedor. Isso dá aos desenvolvedores a liberdade de usar uma infinidade de módulos de terceiros disponíveis para a plataforma subjacente.
 
-
-2.1. Principais Funcionalidades
+### 2.1. Principais Funcionalidades
 
 - Estrutura Modular
 - Suporte a TypeScript
@@ -91,30 +96,108 @@ O Nest fornece um nível de abstração acima desses Node.js comuns frameworks (
 - Integração com bibliotecas externas
 
 
-3. Diagrama de Classes
+------
+
+<br>
+
+## 3. Diagrama de Classes
+
+# 
+
+---
+
+```mermaid
+---
+config:
+  theme: dark
+  layout: dagre
+---
+
+classDiagram
+    class Categoria {
+        id: number
+        nome: string
+        descricao: string
+        produto: Produto[]
+    }
+
+    class Produto {
+        id: number
+        nome: string
+        preco: number
+        foto: string
+        informacoes: string
+        categoria: Categoria
+        usuario: Usuario
+    }
+
+    class Usuario {
+        id: number
+        nome: string
+        usuario: string
+        senha: string
+        foto: string
+        produto: Produto[]
+    }
+
+    Categoria "1" --> "many" Produto : contém
+    Produto "many" --> "1" Categoria : pertence a
+    Produto "many" --> "1" Usuario : criado por
+    Usuario "1" --> "many" Produto : possui
+```
+
+------
+
+<br>
+
+## 4. Diagrama Entidade-Relacionamento (DER)
 
 
-4. Diagrama Entidade-Relacionamento (DER)
+
+<div align="center">
+    <img src="https://i.imgur.com/NZ7cDkA.png" title="DER">
+</div>
 
 
-5. Tecnologias utilizadas
 
-- Servidor: Node JS
-- Linguagem de programação: TypeScript
-- Framework: Nest JS
-- ORM: TypeORM
-- Banco de dados Relacional: MySQL
-  
 
-6. Configuração e Execução
-   
-I. Clone o repositório
+------
 
-II. Instale as dependências: npm install
+<br>
 
-III. Configure o banco de dados no arquivo app.module.ts
+## 5. Tecnologias utilizadas
 
-IV. Execute a aplicação: npm run start:dev
+| Item                          | Descrição  |
+| ----------------------------- | ---------- |
+| **Servidor**                  | Node JS    |
+| **Linguagem de programação**  | TypeScript |
+| **Framework**                 | Nest JS    |
+| **ORM**                       | TypeORM    |
+| **Banco de dados Relacional** | MySQL      |
+| **Deploy**                    | Swagger    |
+|                               | Render     |
 
-7. Colaboradores
-@ZarathosFreya @Beatriz-Rodrigues-P @brunop-lima @emilyestvz @fern-menezes @Josadack @VictorPestana
+------
+
+<br>
+
+## 6. Configuração e Execução
+
+1. Clone o repositório
+2. Instale as dependências: `npm install`
+3. Configure o banco de dados no arquivo `app.module.ts`
+4. Execute a aplicação: `npm run start:dev`
+
+------
+
+<br>
+
+## 7. Colaboradores
+
+`@ZarathosFreya`
+`@Beatriz-Rodrigues-P`
+`@brunop-lima`
+`@emilyestvz`
+`@fern-menezes`
+`@Josadack`
+`@VictorPestana`
