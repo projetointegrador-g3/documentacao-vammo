@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="assets/logo.png" title="Logo Vammo" width="50%"/>
+    <img src="assets/vammo_logo.png" title="Logo Vammo" width="50%"/>
 </div>
 
 ---
@@ -22,11 +22,11 @@ O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para
   - Origem
   - Destino
   - Data e hora da ida
-  - Preço
+  - Preço da viagem
   - Distância entre origem e destino
-  - Veículo
   - Status da viagem
-  - Nota
+  - Veículo
+  - Usuário
 
 - **Consulta de Viagem:**
   - Listagem de todas as viagens.
@@ -34,7 +34,7 @@ O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para
   - Visualização de cálculo do tempo da viagem com base na distância e na velocidade média do veículo.
 
 - **Atualização de Viagem:**
-  - Altera a origem, destino, data da ida, preço, distância, veículo, status e nota de uma viagem existente.
+  - Altera a origem, destino, data da ida, preço, distância, status e nota de uma viagem existente e veículo.
 
 ### 2.2 Gerenciamento de Veículos
 
@@ -42,32 +42,32 @@ O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para
   - ID
   - Modelo
   - Placa
-  - Data de fabricação
+  - Ano de fabricação
   - Observação
   - Disponibilidade
 
 - **Consulta de Veículos:**
-  - Busca avançada por modelo, placa, data de fabricação, observação e disponibilidade.
+  - Busca avançada por modelo, placa, ano de fabricação, observação e disponibilidade.
   - Visualização detalhada do perfil de um veículo.
 
 - **Atualização de Dados:**
-  - Alterar modelo, placa, data de fabricação, observação e disponibilidade.
+  - Alterar modelo, placa, ano de fabricação, observação e disponibilidade.
 
 ### 2.3 Gerenciamento de Usuários
 
 - Permite adicionar novos usuários ao sistema com as seguintes informações:
   - ID
   - Tipo de usuário
-  - Gênero
   - Nome
-  - Data de Nascimento
+  - Data de aniversário
+  - Gênero
   - Usuário
   - Senha
   - Foto
-  - Avaliação
+  - Avaliação do motorista
 
 - **Consulta de Usuários:**
-  - Busca avançada por nome e usuário.
+  - Busca avançada por nome, gênero e usuário.
   - Visualização detalhada do perfil de um usuário.
 
 - **Atualização de Dados:**
@@ -83,11 +83,11 @@ Nos bastidores, o Nest utiliza estruturas robustas de servidor HTTP como o **Exp
 
 ### 3.1 Principais Funcionalidades
 
-- Estrutura Modular
+- Estrutura modular
 - Suporte a TypeScript
 - Injeção de dependências
 - Testes facilitados
-- Controllers e Rotas
+- Controllers e rotas
 - Validação e serialização
 - Integração com bibliotecas externas
 
@@ -103,36 +103,47 @@ config:
 ---
 
 classDiagram
-    class Categoria {
-        id: number
-        nome: string
-        descricao: string
-        produto: Produto[]
-    }
-
-    class Produto {
-        id: number
-        nome: string
-        preco: number
-        foto: string
-        informacoes: string
-        categoria: Categoria
-        usuario: Usuario
-    }
-
     class Usuario {
         id: number
+        tipo_user: string
         nome: string
+        data_aniversario: string
+        genero: string
         usuario: string
         senha: string
         foto: string
-        produto: Produto[]
+        avaliacao: number
+        viagem: Viagem[]
     }
 
-    Categoria "1" --> "many" Produto : contem
-    Produto "many" --> "1" Categoria : pertence a
-    Produto "many" --> "1" Usuario : criado por
-    Usuario "1" --> "many" Produto : possui
+    class Veiculo {
+        id: number
+        modelo: string
+        placa: string
+        ano_fabricacao: string
+        observacao: string
+        disponivel: boolean
+        viagem: Viagem[]
+    }
+
+    class Viagem {
+        id: number
+        data_ida: Date
+        origem: string
+        destino: string
+        distancia: number
+        velocidade: number
+        preco: number
+        duracao: string
+        status: string
+        veiculo: Veiculo
+        usuario: Usuario
+    }
+
+    Usuario --> Viagem : 1 --> N
+    Veiculo --> Viagem : 1 --> N
+    Viagem --> Usuario : N --> 1
+    Viagem --> Veiculo : N --> 1
 ```
 
 ---
@@ -140,7 +151,7 @@ classDiagram
 ## 5. Diagrama Entidade-Relacionamento (DER)
 
 <div align="center">
-    <img src="https://i.imgur.com/NZ7cDkA.png" title="DER">
+    <img src="https://ik.imagekit.io/n0nz1jfh6/Vammo/DER.png?updatedAt=1738338317078" title="DER">
 </div>
 
 ---
