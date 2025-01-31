@@ -1,10 +1,10 @@
 <div align="center">
-    <img src="https://i.imgur.com/pxKDdcY.png" title="source: imgur.com" width="50%"/>
+    <img src="" title="Logo Vammo" width="50%"/>
 </div>
 
 ---
 
-# Vammo ↩
+# Vammo ↩🚘
 ## Backend para Aplicativo de Carona Compartilhada
 
 ## 1. Descrição
