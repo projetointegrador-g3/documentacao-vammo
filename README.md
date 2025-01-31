@@ -9,14 +9,17 @@
 <br /><br />
 
 ## 1. Descrição
-
+<br>
 O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para um aplicativo de carona compartilhada. Utilizando TypeScript e o framework NestJS, o sistema visa proporcionar uma experiência eficiente e segura para a administração do catálogo de viagens, usuários e veículos, com foco em facilidade de uso e controle de informações.
 
 ## 2. Funcionalidades do projeto
-<br>
+
+<br><br>
+
   2.1 Gerenciamento de Viagens:
   <br>
   Permite adicionar novas viagens ao sistema com as seguintes informações:
+  <br>
   - ID
   - Origem
   - Destino
@@ -28,12 +31,15 @@ O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para
   - Nota
 <br>
   Consulta de Viagem:
+<br>
   - Listagem de todas as viagens.
   - Busca por ID.
   - Visualização de cálculo do tempo da viagem com base na distância e na velocidade média do veículo.
   <br>
   Atualização de Viagem:
+    <br>
   - Altera a origem, destino, data da ida, preço, distância, veículo, status e nota de uma viagem existente.
+  
   <br><br>
 
   2.2 Gerenciamento de Veículos:
@@ -55,7 +61,9 @@ Atualização de Dados:
 <br><br>
 
 2.3 Gerenciamento de Usuários:
+<br>
   Permite adicionar novos usuários ao sistema com as seguintes informações:
+  <br>
   - ID
   - Tipo de usuário
   - Genero
@@ -67,10 +75,12 @@ Atualização de Dados:
   - Avaliação
   <br>
   Consulta de Usuários:
+<br>
   - Busca avançada por nome e usuário.
   - Visualização detalhada do perfil de um usuário.
   <br>
   Atualização de Dados:
+<br>
   - Alterar informações cadastrais, como nome, usuário ou foto.
 
   
@@ -84,9 +94,10 @@ Atualização de Dados:
 Nos bastidores, o Nest faz uso de estruturas robustas de servidor HTTP como o Express (o padrão) e, opcionalmente, pode ser configurado para usar o Fastify também!
 
 O Nest fornece um nível de abstração acima desses Node.js comuns frameworks (Express/Fastify), mas também expõe suas APIs diretamente ao desenvolvedor. Isso dá aos desenvolvedores a liberdade de usar uma infinidade de módulos de terceiros disponíveis para a plataforma subjacente.
+<br><br>
 
 ### 2.1. Principais Funcionalidades
-
+<br>
 - Estrutura Modular
 - Suporte a TypeScript
 - Injeção de dependências
@@ -98,7 +109,7 @@ O Nest fornece um nível de abstração acima desses Node.js comuns frameworks (
 
 ------
 
-<br>
+<br><br>
 
 ## 3. Diagrama de Classes
 
