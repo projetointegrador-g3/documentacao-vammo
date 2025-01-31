@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="" title="Logo Vammo" width="50%"/>
+    <img src="assets/vammo_logo.png" title="Logo Vammo" width="50%"/>
 </div>
 
 ---
