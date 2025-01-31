@@ -10,11 +10,10 @@
 
 ## 1. Descrição
 <br>
-O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para um aplicativo de carona compartilhada. Utilizando TypeScript e o framework NestJS, o sistema visa proporcionar uma experiência eficiente e segura para a administração do catálogo de viagens, usuários e veículos, com foco em facilidade de uso e controle de informações.
+O projeto <b>Vammo</b>Vammo é o desenvolvimento de um backend robusto e escalável para um aplicativo de carona compartilhada. Utilizando TypeScript e o framework NestJS, o sistema visa proporcionar uma experiência eficiente e segura para a administração do catálogo de viagens, usuários e veículos, com foco em facilidade de uso e controle de informações.
 
 ## 2. Funcionalidades do projeto
-
-<br><br>
+<br>
 
   2.1 Gerenciamento de Viagens:
   <br>
@@ -35,6 +34,7 @@ O projeto **Vammo** é o desenvolvimento de um backend robusto e escalável para
   - Listagem de todas as viagens.
   - Busca por ID.
   - Visualização de cálculo do tempo da viagem com base na distância e na velocidade média do veículo.
+    
   <br>
   Atualização de Viagem:
     <br>
